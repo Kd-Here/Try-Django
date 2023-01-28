@@ -1,0 +1,6 @@
+.vscode
+db.sqlite3
+Pipfile*
+playground/__pycache__/
+playground/migrations/__pycache__/
+storefront/__pycache__/
