@@ -1,2 +1,2 @@
-# -Try-Django
+# Try-Django
 Learned Django webframework
