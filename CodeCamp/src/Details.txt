@@ -1,0 +1,5 @@
+manage.py is file which is use to run the django which is main file containing all details.
+
+
+src\trydjango\settings.py
+This settings file contains all server config details  
