@@ -26,6 +26,7 @@ urlpatterns = [
     #we added all product url inside product app so call them with this see above we have example
     path('products/', include('products.urls')),
     path('blog/', include('blog.urls')),
+    path('courses/',include('courses.urls')),
 
     path('admin/', admin.site.urls),
     # Step 2:- Update the path

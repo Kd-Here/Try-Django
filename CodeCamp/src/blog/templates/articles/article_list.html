@@ -5,10 +5,10 @@
 
 <h1 class="bg-pink-200">This is our blog self made first app</h1>
 
-{% for i in blogList %}
-
+{% for i in object_list %}
 <div>    
-    Title :- {{i.title}}  Author :- {{i.author}} Created@ :- {{i.created_on}}
+   <strong>{{forloop.counter}}</strong> Title :- {{i.title}}  Author :- {{i.author}} Created@ :- {{i.created_on}}
+
 </div>
 
 {% endfor %}

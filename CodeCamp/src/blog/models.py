@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Article(models.Model):
@@ -7,11 +8,14 @@ class Article(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     author = models.TextField()
 
+
+    def get_absolute_url(self):
+        return reverse('articles:article-detail',kwargs={"id":self.id})
+
     class Meta:
         ordering = ['created_on']
 
-        def __unicode__(self):
-            return self.title
+        
 
 
 class Comment(models.Model):

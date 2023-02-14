@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>The courses list</h1>
+
+
+{% for instance in object_list %}
+     <p class="color-cyan-900">{{ instance.id }} - {{ instance.title }}</p>
+{% endfor %}
+
+
+{% endblock %}
