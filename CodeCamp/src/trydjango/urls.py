@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.urls import include
 # See above function view how to import view from file and map with url follow both step
 # Step 1 :- Imported 
 # from pages import views #Since we can have many views in different app it's better to have general approach for it
 from pages.views import home_view,contact_view,mainHome_view,contact_view1
 
-
 urlpatterns = [
+
+    #we added all product url inside product app so call them with this see above we have example
+    path('products/', include('products.urls')),
+    path('blog/', include('blog.urls')),
+
     path('admin/', admin.site.urls),
     # Step 2:- Update the path
     path('',home_view,name='home_view'),
@@ -39,3 +43,13 @@ urlpatterns = [
     path('index',mainHome_view),
 
 ]
+"""
+    Now we added product url's inside product app
+    # For products app 
+    path('products/',product_details),
+    path('create/',product_created),
+    path('p/<int:id>/',dyanmic_lookup_view,name='product-details'),
+    path('products/<int:id>/delete/',product_delete),
+    path('prlist/',prdouct_list),
+    path('conts/<int:id>/',mainHome_view,name='product-details'),
+"""

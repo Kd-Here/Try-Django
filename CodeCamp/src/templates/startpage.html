@@ -5,4 +5,48 @@
 <h1>We are in startpage</h1>
 <p>This is with templating engine</p>
 
+<h2>{{myhtml | safe}} Here we used django template filters what after | is filter for tags</h2>
+
+<ol>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+</ol>
+<span>
+    <br>
+    <h1>This is our context which in short means data from backend.</h1>
+    <strong>Today's Date is rendered from backend:-</strong>
+    <i>
+        {{TodayDate}} th {{Toadymonth|capfirst}} {{Todayyear}}
+    </i>
+    <br>
+    This is way to retrive data from backend! Using cruly braces
+
+
+    <ul class="space-y-1- pl-1 text-black-500 list-disc list-inside dark:text-black-400">
+
+        {% for i in ad %}
+        {% if i == 22 %}
+        <li>
+            {{forloop.counter}} :- {{i|add:188}}
+        </li>
+        {% elif i == 23 %}
+        <li>
+            {{forloop.counter}} :- {{i|add:187}}
+        </li>
+        {% else %}
+        <li>
+            {{forloop.counter}} :- {{i}}
+        </li>
+        {% endif %}
+
+
+        {%endfor%}
+    </ul>
+</span>
+
+<b>This is list here we are using built in tag filter operation here</b>
+<br>
+{{ad|slugify}}
+{{ad}}
 {% endblock %}

@@ -1,0 +1,23 @@
+{%extends "layout.html" %}
+
+
+{% block content %}
+
+<h3 class="text-xl">This is product details page</h3>
+
+<br>
+
+<b><i>Data is render from backend:-</i></b>
+
+
+<h1>Product summary :- {{object.summary}}</h1>
+<b>Product :- {{object.title}}</b>
+
+<p>
+
+    Product description :- <i>{% if object.description != " " %} {{object.description}} {%else%} Coming soon
+        {%endif%}</i>
+
+</p>
+
+{%endblock%}

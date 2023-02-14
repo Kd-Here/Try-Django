@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+
+{% block content  %}
+
+{% comment %}
+    This is comment here we can add all comment, 
+    The below {{form.as_p}} is taking con
+    this is built in method that turns form we had passed into context into html para text
+{% endcomment %}
+
+{% comment %}
+#this if for custom form method
+<form method="POST"> {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Save">
+</form>
+    
+{% endcomment %}
+
+{% comment %}
+<!-- action used is for sending your url i.e. your input where you provided the path -->
+{% endcomment %}
+
+<form action="." method="post">{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Save">
+</form>
+
+{% endblock %}
+

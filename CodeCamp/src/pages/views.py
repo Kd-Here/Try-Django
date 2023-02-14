@@ -3,9 +3,19 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
+def contact_view1(request,*args,**kwargs): #*args,**kwargs this bcoz we need some arguments
+    return render(request,'contact.html',{})
+
 
 def home_view(request,*args,**kwargs): #*args,**kwargs this bcoz we need some functional arguments
-    return render(request,'startpage.html',{})
+    my_context = {
+        'TodayDate':3,
+        'Toadymonth':"feb",
+        'Todayyear':2023,
+        'ad': [122,22,23,242,45,66,77,88,99],
+        'myhtml':"<h1>Hello World </h1>"
+    }
+    return render(request,'startpage.html',my_context)
 
 def contact_view(request,*args,**kwargs): #*args,**kwargs this bcoz we need some arguments
     print(request.user) #This is for authentication purpose 
@@ -13,8 +23,6 @@ def contact_view(request,*args,**kwargs): #*args,**kwargs this bcoz we need some
 
     # This is simialr with render
 
-def contact_view1(request,*args,**kwargs): #*args,**kwargs this bcoz we need some arguments
-    return render(request,'contact.html',{})
 
 def mainHome_view(request,*args,**kwargs):
     return render(request,'home.html',{})

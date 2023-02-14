@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+
+{% block content  %}
+
+ 
+{% for inst in listofObj %}
+<div class="bg-fuchsia-300">
+    {% comment "for a href this is basic way " %}
+        Id => {{inst.id}} <a href="/products/{{inst.id}}">Take to product</a>  Title => {{inst.title}} 
+    {% endcomment %}
+        
+        Id => {{inst.id}} <a href="{{inst.get_absoulte_url}}">Take to product</a>  Title => {{inst.title}} 
+
+</div>
+<br>
+{% endfor %}
+
+{% endblock %}
+
